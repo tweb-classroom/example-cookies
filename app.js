@@ -25,16 +25,4 @@ csrf.get('/', function (req, res) {
 });
 http.createServer(csrf).listen(3001, () => console.log("csrf endpoint started"));
 
-// https://blog.chromium.org/2019/10/developers-get-ready-for-new.html
 
-// The most common solution is to use CSRF tokens.
-// https://github.com/expressjs/csurf
-
-// SameSite is still experimental and requires to turn on features in the browser.
-// res.set('Set-Cookie', ['cookie=choco', 'SameSite=None', 'Secure']);
-
-// A partial solution to prevent CSRF with Fetch (or XMLHTTPRequest) is to configure CORS correctly.
-// res.set('Access-Control-Allow-Origin', 'http://localhost');
-
-// Never do this except if you have a good reason!
-// Access-Control-Allow-Origin: *
